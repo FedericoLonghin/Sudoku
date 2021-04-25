@@ -29,12 +29,12 @@ int main()
       }
       printf("Prova di Sudoku di Federico Longhin. Credo che, come tutto, abbandonerò il progetto stasera.\nPremi [ENTER] per iniziare, [N] per creare un nuovo gioco, [P] per pulire il campo da gico, qualsiasi altro per uscire: ");
       scanf("%c", &L);
-      if (L == 'P')
+      if (L == 'P' || L == 'p')
       {
         printf("Allora, questo è il punto... non mi funziona sta parte, quindi per ora, se proprio vuoi pulie il campo da gioco, vai /Partite/nuovaPartita.csv e elimina il contenuto del file. teopricamente potresti semplicemente eliminare il file, ma non mi ricordo se funziona o meno... detto questo, grazie per aver letto fino a que, e scusami ancora se questa parte non funziona. anzi, se sai come fixxarla vai su github e fammi una pull request\n");
         return 0;
       }
-      else if (L == 'N')
+      else if (L == 'N' || L == 'n')
       {
         mode = 2;
       }
