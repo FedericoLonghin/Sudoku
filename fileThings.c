@@ -61,3 +61,7 @@ void createFile()
     fp = fopen("Partite/nuovaPartita.csv", "w");
     fclose(fp);
 }
+void deleteFile()
+{
+    remove("Partite/nuovaPartita.csv");
+}
