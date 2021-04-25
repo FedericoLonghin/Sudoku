@@ -64,6 +64,7 @@ int main()
     case 3: //for deleting file content
       system("clear");
       printf("CAMPO DA GIOCO PULITO CON SUCCESSO!");
+      deleteFile();
       createFile();
       printTable();
       askCose();
