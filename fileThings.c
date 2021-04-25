@@ -13,20 +13,23 @@ bool openFile()
             car = getc(fp);
             if (car != EOF)
             {
-                  if(car>58||car<47)return false;
-                fileReaded[h] =car-48;
+                if (car > 58 || car < 47)
+                    return false;
+                fileReaded[h] = car - 48;
             }
             h++;
         }
 
         for (int i = 0; i < DIM * DIM; i++)
-        {            table[i % 9][i / 9] = fileReaded[i];
+        {
+            table[i % 9][i / 9] = fileReaded[i];
+                        tablemode[i % 9][i / 9] = fileReaded[i+(DIM*DIM)];
+
         }
     }
-    else{
-
-        printf("non cato il file");
-    return false;
+    else
+    {
+        return false;
     }
 
     fclose(fp);
@@ -41,7 +44,12 @@ void updateFile()
     for (int i = 0; i < DIM * DIM; i++)
     {
 
-        fprintf(fp,"%d",table[i % 9][i / 9]);
+        fprintf(fp, "%d", table[i % 9][i / 9]);
+    }
+    for (int i = 0; i < DIM * DIM; i++)
+    {
+
+        fprintf(fp, "%d", tablemode[i % 9][i / 9]);
     }
     fclose(fp);
 }

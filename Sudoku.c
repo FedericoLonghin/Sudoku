@@ -3,10 +3,11 @@
 #include <stdbool.h>
 #include <string.h>
 #define DIM 9
-char L = 'S';
+char L;
 int num;
 int table[DIM][DIM];
 bool tablemode[DIM][DIM];
+
 char tempX[2], tempY[2], tempNum[2];
 int fileReaded[1000];
 int X, Y, Num;
@@ -20,21 +21,20 @@ int main()
   {
     switch (mode)
     {
-    case 0:
-  
-      printf("Prova di Sudoku di Federico Longhin. Credo che, come tutto, abbandonerò il progetto stasera.\nPremi [I] per iniziare, [N] per creare un nuovo gioco, qualsiasi altro per uscire: ");
+    case 0://initial situation
+      printf(" Prova di Sudoku di Federico Longhin. Credo che, come tutto, abbandonerò il progetto stasera.\nPremi [ENTER] per iniziare, [N] per creare un nuovo gioco, qualsiasi altro per uscire: ");
       if (!openFile())
       {
        createFile();
       }
       scanf("%c", &L);
-      if (L == 'I')
+      if (L == 10)
       {
         mode = 1;
       }
       else if (L == 'N')
       {
-        createFile();
+       remove("/Partite/nuovaPartita.csv");
         mode = 1;
       }
       else
@@ -44,7 +44,7 @@ int main()
 
 
       break;
-    case 1:
+    case 1://while palying 
 
       system("clear");
 

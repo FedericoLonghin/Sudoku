@@ -6,21 +6,22 @@ void printTable()
     {
         if (!(i % 3))
         {
-            printf("\t --------------------\n");
+            printf("\t\033[37m --------------------\n");
         }
 
         printf("\t");
 
         for (int j = 0; j < DIM; j++)
         {
+                printf(tablemode[j][i]?"\033[34m":"\033[37m");
             if (!(j % 3))
-                printf("|");
+                printf("\033[37m|");
 
             if (!table[j][i])
                 printf("  ");
             else printf(" %d",table[j][i]);
         }
-        printf("|\n");
+        printf("\033[37m|\n");
     }
-    printf("\t --------------------\n\n");
+    printf("\t\033[37m --------------------\n\n");
 }
