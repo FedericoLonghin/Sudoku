@@ -31,8 +31,7 @@ int main()
       scanf("%c", &L);
       if (L == 'P' || L == 'p')
       {
-        printf("Allora, questo è il punto... non mi funziona sta parte, quindi per ora, se proprio vuoi pulie il campo da gioco, vai /Partite/nuovaPartita.csv e elimina il contenuto del file. teopricamente potresti semplicemente eliminare il file, ma non mi ricordo se funziona o meno... detto questo, grazie per aver letto fino a que, e scusami ancora se questa parte non funziona. anzi, se sai come fixxarla vai su github e fammi una pull request\n");
-        return 0;
+        mode = 3;
       }
       else if (L == 'N' || L == 'n')
       {
@@ -59,6 +58,13 @@ int main()
     case 2: //for creating a new game
       system("clear");
       printf("CREA IL TUO SUDOKU\nPotrai trovare il tuo file condivisibile in /Partite/nuovaPartita.csv Premi [Ctrl + C] Per uscire");
+      printTable();
+      askCose();
+      break;
+    case 3: //for deleting file content
+      system("clear");
+      printf("CAMPO DA GIOCO PULITO CON SUCCESSO!");
+      createFile();
       printTable();
       askCose();
       break;
