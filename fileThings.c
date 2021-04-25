@@ -13,7 +13,6 @@ bool openFile()
             car = getc(fp);
             if (car != EOF)
             {
-                //  putc(car, stdout);
                   if(car>58||car<47)return false;
                 fileReaded[h] =car-48;
             }
@@ -34,7 +33,7 @@ bool openFile()
     return true;
 }
 
-void updateFile(int _x, int _y, int _num)
+void updateFile()
 {
     FILE *fp;
 
@@ -44,5 +43,11 @@ void updateFile(int _x, int _y, int _num)
 
         fprintf(fp,"%d",table[i % 9][i / 9]);
     }
+    fclose(fp);
+}
+void createFile()
+{
+    FILE *fp;
+    fp = fopen("Partite/nuovaPartita.csv", "w");
     fclose(fp);
 }
