@@ -4,7 +4,7 @@ bool openFile()
     char car = 'a';
     FILE *fp;
 
-    fp = fopen("Partite/nuovaPartita.csv", "r");
+    fp = fopen("Partite/nuovaPartita.csv", "r+");
 
     if (fp != NULL)
     {
@@ -29,6 +29,8 @@ bool openFile()
     }
     else
     {
+            fclose(fp);
+
         return false;
     }
 

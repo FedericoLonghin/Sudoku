@@ -29,6 +29,7 @@ void askCose()
     {
 
         table[X - 1][Y - 1] = num;
+        if(mode==2)tablemode[X-1][Y-1]=1;
         updateFile();
     }
     
@@ -36,6 +37,7 @@ void askCose()
 
 bool checkNumber(int _x, int _y, int _n)
 {
+    if(mode!=2 && tablemode[_x][_y]==1)return 0;
     if (!_n)
         return 1;
     for (int i = 0; i < DIM; i++)

@@ -13,9 +13,9 @@ void printTable()
 
         for (int j = 0; j < DIM; j++)
         {
-                printf(tablemode[j][i]?"\033[34m":"\033[37m");
             if (!(j % 3))
                 printf("\033[37m|");
+                printf(tablemode[j][i]?"\033[34m":"\033[37m");
 
             if (!table[j][i])
                 printf("  ");
